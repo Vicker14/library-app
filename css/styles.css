@@ -119,6 +119,8 @@ body {
 form div {
     display: flex;
     justify-content: space-between;
+
+    align-items: center;
 }
 
 input {
@@ -128,9 +130,9 @@ input {
     padding: 0.2rem 0.5rem;
 }
 
-button.add-book {
+form .add-book {
     grid-area: 3 / 1 / 4 / 3;
-    margin-top: 2rem;
+    margin: 1rem 4rem 0;
 }
 
 .hide {
