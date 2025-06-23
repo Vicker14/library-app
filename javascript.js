@@ -92,3 +92,10 @@ const container = document.querySelector(".container");
 for (let i = 0; i < myLibrary.length; i++) {
     displayBook(myLibrary[i]);
 }
+
+const addButton = document.querySelector(".add-book");
+const addForm = document.querySelector(".add-book-form");
+
+addButton.addEventListener("click", () => {
+    addForm.classList.toggle("hide")
+})

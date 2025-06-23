@@ -19,6 +19,26 @@
         <button class="add-book">New!</button>
     </div>
 
+    <form action="javascript.js" class="add-book-form hide">
+        <div>
+            <label>Tile</label>
+            <input type="text" name="title"></input>
+        </div>
+        <div>
+            <label for="author">Author</label>
+            <input type="text" name="author"></input>
+        </div>
+        <div>
+            <label for="pages">Pages</label>
+            <input type="number" name="pages"></input>
+        </div>
+        <div>
+            <label for="read">Read?</label>
+            <input type="checkbox" name="read" class="book-status">
+        </div>
+        <button type="submit" class="add-book">Register book</button>
+    </form>
+
     <div class="content">
 
         <div class="counter">

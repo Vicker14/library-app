@@ -64,6 +64,8 @@ h1, h2, h3, h4, h5, h6 {
     --bg-color-header: #fff;
     --bg-color-content: #eee;
     --bg-button: #77f;
+
+    --grey-color: rgb(0,0,0,0.1)
 }
 
 body {
@@ -103,6 +105,36 @@ body {
 .add-book:hover {
     filter: brightness(85%);
     cursor: pointer;
+}
+
+.add-book-form {
+    padding: 2rem var(--container-horizontal-padding);
+    width: 100%;
+
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 1rem 2rem;
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    border-radius: 0.5rem;
+    border: var(--grey-color) solid 0.1rem;
+
+    padding: 0.2rem 0.5rem;
+}
+
+button.add-book {
+    grid-area: 3 / 1 / 4 / 3;
+    margin-top: 2rem;
+}
+
+.hide {
+    display: none;
 }
 
 .content {
