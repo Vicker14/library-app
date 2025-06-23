@@ -21,3 +21,16 @@ function addBookToLibrary(newBook) {
 
 addBookToLibrary(theHobbit);
 addBookToLibrary(gameOfThrones);
+
+const readBooks = document.querySelector(".read");
+const totalBooks = document.querySelector(".total");
+
+totalBooks.textContent = `${myLibrary.length}`;
+
+let booksRead = 0;
+
+for (let i = 0; i < myLibrary.length; i++) {
+    if (myLibrary[i].read === true) booksRead++;
+}
+
+readBooks.textContent = `${booksRead}`;

@@ -118,10 +118,17 @@ body {
 
 .counter {
     display: flex;
+    align-items: last baseline;
+
+    font-weight: 300;
+    margin: 1rem 1rem 0;
+
 }
 .counter div {
-    margin: 0 1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    margin: 0.5rem;
 }
 
 .container {
