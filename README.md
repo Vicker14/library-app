@@ -2,6 +2,9 @@
 
 The Library app allows users to keep track of books they have read, are currently reading, or want to read. Users can add books, mark them as read, and remove them from the list.
 
+## Preview
+Check the final live result in [this link](https://vicker14.github.io/library-app/)
+
 ## Features
 
 - Add books with title, author, number of pages, and reading status.
