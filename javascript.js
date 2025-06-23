@@ -13,9 +13,7 @@ function Book(title, author, pages, read) {
 };
 
 const theHobbit = new Book('The Hobbit', 'Tolkien', 295, true);
-const gsth = new Book('The Hobbit', 'Tolkien', 295, true);
-const jfgsrd = new Book('The Hobbit', 'Tolkien', 295, true);
-const gameOfThrones = new Book('Game of Thrones', 'George R.R. Martin', 1543, false);
+const gameOfThrones = new Book('Game of Thrones', 'George R.R. Martin', 1543, true);
 
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook)
@@ -29,14 +27,12 @@ addBookToLibrary(gameOfThrones);
 const readBooks = document.querySelector(".read");
 const totalBooks = document.querySelector(".total");
 
-totalBooks.textContent = `${myLibrary.length}`;
-
 let booksRead = 0;
-
 for (let i = 0; i < myLibrary.length; i++) {
     if (myLibrary[i].read === true) booksRead++;
 }
 
+totalBooks.textContent = `${myLibrary.length}`;
 readBooks.textContent = `${booksRead}`;
 
 // Logic to add new books
@@ -73,6 +69,9 @@ function displayBook(bookObject) {
     const checkboxHTML = document.createElement("input");
     checkboxHTML.setAttribute("type", "checkbox");
     checkboxHTML.setAttribute("class", "book-status");
+    if (read) {
+        checkboxHTML.checked = true;
+    }
 
     controlsHTML.appendChild(removeHTML);
     controlsHTML.appendChild(checkboxHTML);
