@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library App</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+
     <script src="javascript.js"> </script>
+
 </head>
 
 <body>
-    library
+
+    <div class="header">
+        <h1 class="title">library</h1>
+        <button class="add-book">New!</button>
+    </div>
+
+    <div class="content">
+
+        <div class="counter">
+            <div class="read">read</div>
+            /
+            <div class="total">total</div>
+        </div>
+
+        <div class="container">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        <!-- BASIC CARD LAYOUT -->
+            <div class="card">
+                <div class="info">
+                    <div class="book-name">Hary Potter</div>
+                    <div class="book-author">J.K. Rowling</div>
+                    <div class="book-pages">342</div>
+                </div>
+                <div class="controls">
+                    <button class="remove-book">remove</button>
+                    <input type="checkbox" class="book-status"></input>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
