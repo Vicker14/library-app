@@ -42,6 +42,8 @@ function displayBook(bookObject) {
     const author = bookObject.author;
     const pages = bookObject.pages;
     const read = bookObject.read;
+    const index = myLibrary.indexOf(bookObject);
+
 
     // agrupar hijos
     const infoHTML = document.createElement("div")
@@ -66,12 +68,25 @@ function displayBook(bookObject) {
     const removeHTML = document.createElement("button")
     removeHTML.setAttribute("class", "remove-book")
     removeHTML.textContent = "remove";
+    removeHTML.addEventListener("click", (e) => {
+        const card = e.target.closest(".card");
+        card.remove();
+        if ( myLibrary[index].read === true) readBooks.textContent = `${--booksRead}`
+        myLibrary.splice(index, 1);
+        totalBooks.textContent = `${myLibrary.length}`
+    })
+
     const checkboxHTML = document.createElement("input");
     checkboxHTML.setAttribute("type", "checkbox");
     checkboxHTML.setAttribute("class", "book-status");
     if (read) {
         checkboxHTML.checked = true;
     }
+    checkboxHTML.addEventListener("change", (e) => {
+        bookObject.read = bookObject.read === true ? false : true;
+        readBooks.textContent = bookObject.read ? `${++booksRead}` : `${--booksRead}`;
+    })
+    
 
     controlsHTML.appendChild(removeHTML);
     controlsHTML.appendChild(checkboxHTML);
@@ -94,8 +109,28 @@ for (let i = 0; i < myLibrary.length; i++) {
 }
 
 const addButton = document.querySelector(".add-book");
-const addForm = document.querySelector(".add-book-form");
+const formElement = document.querySelector(".add-book-form");
 
 addButton.addEventListener("click", () => {
-    addForm.classList.toggle("hide")
+    formElement.classList.toggle("hide")
 })
+
+const submitButton = document.querySelector(".submit-book");
+
+submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const newTitle = document.getElementById("title").value;
+    const newAuthor = document.getElementById("author").value;
+    const newPages = document.getElementById("pages").value;
+    const newStatus = (document.getElementById("read").checked === true ? true : false);
+
+    const newBook = new Book(newTitle, newAuthor, newPages, newStatus);
+
+    addBookToLibrary(newBook);
+    displayBook(newBook);
+
+    totalBooks.textContent = `${myLibrary.length}`;
+    if (newStatus === true) readBooks.textContent = `${++booksRead}`;
+    formElement.classList.toggle("hide")
+});
