@@ -132,7 +132,7 @@ submitButton.addEventListener("click", (e) => {
     DisplayControler.updateCounter();
     addNewForm.classList.toggle("hide");
 })
-/*-----------
+//-----------
 // TEST ZONE
 //-----------
 const theHobbit = new Book('The Hobbit', 'Tolkien', 295, false);
@@ -144,4 +144,3 @@ myLibrary.addBook(gameOfThrones);
 for (let book of myLibrary.inventory) {
     DisplayControler.displayBook(book);
 }
-*/

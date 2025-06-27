@@ -4,6 +4,7 @@ The Library app allows users to keep track of books they have read, are currentl
 
 ## Preview
 Check the final live result in [this link](https://vicker14.github.io/library-app/)
+![Library App Preview](./preview.png)
 
 ## Features
 
